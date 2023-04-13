@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+.login {
+  background-color: aquamarine;
+}
+
