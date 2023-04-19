@@ -1,6 +1,7 @@
 import {
-  GoogleAuthProvider, signInWithPopup, signOut,
+  GoogleAuthProvider, signInWithPopup, signOut, createUserWithEmailAndPassword,
 } from 'firebase/auth';
+import { async } from 'regenerator-runtime';
 import { auth } from './firebase.js';
 
 const provider = new GoogleAuthProvider();
@@ -39,4 +40,18 @@ export const googleLogout = async () => {
     console.log('Error', error);
     // An error happened.
   });
+};
+
+export const signinNewAccount = async (email, password) => {
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
 };

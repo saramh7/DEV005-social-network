@@ -1,7 +1,11 @@
+import login from './login';
+
 function home(navigateTo) {
   const section = document.createElement('section');
   const title = document.createElement('h2');
   const button = document.createElement('button');
+  //  const logo = document.getElementById('logo');
+  //  logo.src = '/src/Imagen/Logo sin fondo.png';
 
   button.textContent = 'login';
   button.addEventListener('click', () => {
@@ -13,3 +17,7 @@ function home(navigateTo) {
   return section;
 }
 export default home;
+
+// section.classList.add('fondo');
+// title.classList.add('titulo');
+// button.classList.add(button - login);
