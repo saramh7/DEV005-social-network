@@ -1,11 +1,13 @@
-import home from './Componentes/home.js';
-import login from './Componentes/login.js';
-import error from './Componentes/error.js';
+import Login from './components/Login.js';
+import Error from './components/Error.js';
+import Register from './components/Register.js';
+import Home from './components/Home.js';
 
 const routes = [
-  { path: '/', componentes: home },
-  { path: '/login', componentes: login },
-  { path: '/error', componentes: error },
+  { path: '/', components: Login },
+  { path: '/register', components: Register },
+  { path: '/home', components: Home },
+  { path: '/error', components: Error },
 ];
 
 const defaultRoute = '/';
@@ -14,17 +16,17 @@ const root = document.getElementById('root');
 function navigateTo(hash) {
   const route = routes.find((routeFound) => routeFound.path === hash);
 
-  if (route && route.componentes) {
+  if (route && route.components) {
     window.history.pushState(
       {},
-      route.path,
-      window.location.origin + route.path,
+      hash,
+      window.location.origin + hash,
     );
 
     if (root.firstChild) {
       root.removeChild(root.firstChild);
     }
-    root.appendChild(route.componentes(navigateTo));
+    root.appendChild(route.components(navigateTo));
   } else {
     navigateTo('/error');
   }
