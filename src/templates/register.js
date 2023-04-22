@@ -1,5 +1,5 @@
 /**
- * Template usado en el components/Register.js
+ * Template usado en el components/Register.js-To DO
  */
 export const loginTemplate = `
   <header>
