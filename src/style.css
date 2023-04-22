@@ -1,21 +1,103 @@
 * {
   padding: 0;
   margin: 0;
-}
-
-h2 {
-  font-size: 30px;
-}
-
-.login {
   background-color: #fffff4;
+  color: #515151;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.fondo {
-  background-color: #fffff4;
+/* @media (min-width: 480px) and (max-width: 915px) */
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 25px;
 }
 
-.logo {
-  width: 50px;
-  height: 50px;
+.logo-inicio {
+  width: 80px;
+  padding: 1rem 0;
+  object-fit: contain;
+}
+
+.title {
+  padding: 1rem 0;
+  font-family: 'Alex Brush', cursive;
+  font-size: 36px;
+  align-self: center;
+  vertical-align: bottom;
+  white-space: nowrap;
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  margin-top: 2rem;
+  position: relative;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.input-login {
+  display: flex;
+  flex-direction: column;
+  padding: 25px 0;
+}
+
+.email,
+.password {
+  margin-top: 12px;
+  width: 242px;
+  height: 34px;
+  background: #fefae0;
+  border: 1px solid #ccd5ae;
+  border-radius: 15px;
+  padding: 0 1rem;
+  font-size: 12px;
+}
+
+.status-login {
+  color: red;
+  font-size: 12px;
+  padding-bottom: 1rem;
+  text-align: center;
+  width: 274px;
+}
+
+.login-btn,
+.login-google-btn {
+  box-sizing: border-box;
+  position: relative;
+  width: 274px;
+  height: 36px;
+  background: #e9edc9;
+  border: 1px solid #ccd5ae;
+  border-radius: 155px;
+  font-size: 16px;
+}
+
+.login-google {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 57px;
+  position: relative;
+}
+
+.register-label {
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.register-link {
+  font-weight: bold;
+  text-decoration: none;
 }
