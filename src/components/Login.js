@@ -98,6 +98,8 @@ function Login(navigateTo) {
       console.warn('Login.js - loginBtn - click - Error: ', error);
       statusLogin.innerText = 'Tuvimos un problema. Intente más tarde';
     }
+
+    return null;
   });
   return loginContainer;
 }
