@@ -62,19 +62,19 @@ const googleLogout = async () => {
  * @param  {string} password del nuevo usuario
  * @return  por el momento no retorna datos porque no está siendo utilizada aún.
 */
-const signInNewAccount = async (email, password) => {
+const signInNewAccount = async (email, password, onFinishRegister) => {
   // función registrarse
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-    });
+  await createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    onFinishRegister(true);
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    onFinishRegister(false);
+  });
 };
 
 /**
@@ -124,5 +124,9 @@ const validateSession = () => {
 };
 
 export {
-  googleLogin, googleLogout, signInNewAccount, validateSession, loginWithUserEmail,
+  googleLogin,
+  googleLogout,
+  signInNewAccount,
+  validateSession,
+  loginWithUserEmail,
 };

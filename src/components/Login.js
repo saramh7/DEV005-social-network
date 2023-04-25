@@ -99,8 +99,12 @@ function Login(navigateTo) {
       statusLogin.innerText = 'Tuvimos un problema. Intente más tarde';
     }
   });
+  /**
+   * Funcion para llevar a la ruta de registrado ---
+   */
+  const crearCuentaBtn = loginContainer.querySelector('#reguistradoBtn');
+  crearCuentaBtn.addEventListener('click', async () => navigateTo('/register'));
   return loginContainer;
 }
-
 
 export default Login;

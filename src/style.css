@@ -46,6 +46,12 @@ main {
   letter-spacing: 0.5px;
 }
 
+div{
+  margin: 0px;
+}
+.nombre-reguister{
+  margin: 5px;
+}
 .input-login {
   display: flex;
   flex-direction: column;
@@ -63,7 +69,27 @@ main {
   padding: 0 1rem;
   font-size: 12px;
 }
+.nombre-reguister{
+  margin-top: 12px;
+  width: 100px;
+  height: 34px;
+  background: #fefae0;
+  border: 1px solid #ccd5ae;
+  border-radius: 15px;
+  padding: 0 1rem;
+  font-size: 12px;
+}
+.text-crea-cuenta{
+  font-size: 20px;
+}
 
+.fomRegister{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
 .status-login {
   color: red;
   font-size: 12px;
@@ -101,3 +127,4 @@ main {
   font-weight: bold;
   text-decoration: none;
 }
+
