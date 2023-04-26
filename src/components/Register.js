@@ -1,4 +1,4 @@
-import { signInNewAccount } from '../lib/auth.js';
+import { signInNewAccount } from '../templates/auth.js';
 
 function register(navigateTo) {
   const section = document.createElement('section');

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`signInNewAccount snapshot of signInNewAccount 1`] = `
+<div>
+  [object Promise]
+</div>
+`;
