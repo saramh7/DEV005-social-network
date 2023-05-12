@@ -2,9 +2,17 @@
  * Vista 1. Inicia sesión
  */
 import {
-  googleLogin, validateSession, loginWithUserEmail,
+  googleLogin, loginWithUserEmail, getUserSession,
 } from '../lib/auth';
 import { loginTemplate } from '../templates/login.js';
+
+const validateSession = async (navigateTo) => {
+  getUserSession((user) => {
+    if (user) {
+      navigateTo('/home');
+    }
+  });
+};
 
 function Login(navigateTo) {
   const loginContainer = document.createElement('div');
@@ -12,16 +20,9 @@ function Login(navigateTo) {
   loginContainer.innerHTML = loginTemplate; // Inserta el template de templates/login.js
 
   /**
-  * Por revisar, no está funcionando correctamente.
-  * Se supone que debe validar si el usuario tiene una sesión activa para redirigirlo
-  * directamente al Home
+  * Valida si usuario tiene una sesión activa y redirige al /home
   */
-  // const validate = validateSession();
-  // if (validate) {
-  //   console.log('va');
-  //   navigateTo('/home');
-  //   return '<div></div>';
-  // }
+  validateSession(navigateTo);
 
   /**
   * Agrega evento click al botón de ingresar con google

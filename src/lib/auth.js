@@ -9,6 +9,7 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  getAuth,
 } from 'firebase/auth';
 import { auth } from './index.js';
 
@@ -62,19 +63,12 @@ const googleLogout = async () => {
  * @param  {string} password del nuevo usuario
  * @return  por el momento no retorna datos porque no está siendo utilizada aún.
 */
-const signInNewAccount = async (email, password) => {
+const signInNewAccount = async (name, lastName, userEmail, password) => {
   // función registrarse
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-    });
+  const resultLogin = await createUserWithEmailAndPassword(auth, userEmail, password)
+    .then((userCredential) => ({ loginOk: true, data: userCredential }))
+    .catch((error) => ({ loginOk: false, data: error }));
+  return resultLogin;
 };
 
 /**
@@ -103,26 +97,15 @@ const loginWithUserEmail = async (email, password) => {
  * iniciada. De lo contrario debe retornar un null. Esta función aun no trabaja correctamente.
  * Trabajo en Progreso.
 */
-const validateSession = () => {
-  // Ver como retornar los datos correctos porque está retornando una función
-  const sessionData = onAuthStateChanged(auth, (user) => {
-    console.log('LOG 💥 ~ file: auth.js:64 ~ sessionData ~ user:', user);
-    if (user) {
-      return user;
-    }
+const getUserSession = (callback) => {
+  try {
+    return onAuthStateChanged(auth, callback);
+  } catch (error) {
+    console.warn('Error reading data: ', error);
     return null;
-  });
-  console.log('LOG 💥 ~ file: auth.js:63 ~ validateSession ~ sessionData:', sessionData);
-
-  if (sessionData) {
-    console.warn('Active Session');
-    return sessionData;
   }
-
-  console.warn('Inactive Session');
-  return null;
 };
 
 export {
-  googleLogin, googleLogout, signInNewAccount, validateSession, loginWithUserEmail,
+  googleLogin, googleLogout, signInNewAccount, loginWithUserEmail, getUserSession,
 };
