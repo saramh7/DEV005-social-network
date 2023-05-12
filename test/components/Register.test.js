@@ -1,8 +1,9 @@
 /**
  * @jest-environment jsdom
  */
+import Register '../../src/components/Register.js';
+import * as auth from '../../src/lib/auth.js';
 
-import { signInNewAccount } from '../../src/lib/auth';
 
 describe('signInNewAccount', () => {
   test('it should to be a function', () => {
@@ -16,7 +17,7 @@ describe('signInNewAccount', () => {
     await expect(signInNewAccount(email, password))
       .resolves.not.toThrow();
 
-    // verificar que el usuario está firmado en
+    // verificar que el usuario está logeado en
     const user = auth.currentUser;
     expect(user).not.toBeNull();
     expect(user.email).toBe(email);

@@ -17,7 +17,7 @@ export const loginTemplate = `
     <hr>
     <div class='login-google'>
       <button class='login-google-btn' id="loginGoogleBtn">Ingresa con Google</button>
-      <label class='register-label'>Aún no tienes cuenta? <a href='' id="linkRegister" class='register-link'>Regístrate aquí</a></label>
+      <label class='register-label'>Aún no tienes cuenta? <a href='/register' id="linkRegister" class='register-link'>Regístrate ahora</a></label>
     </div>
   </main>
 `;

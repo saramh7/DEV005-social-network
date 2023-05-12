@@ -1,18 +1,21 @@
 /**
- * Template usado en el components/Register.js-To DO
+ * Template usado en el components/Register.js
  */
-export const loginTemplate = `
+export const registerTemplate = `
   <header>
     <img src='../images/logo.png' class='logo-inicio'>
-    <label class='title'> Te Recomiendo</label>
-    <label class='saludo'>Somos amantes de los libros. Ven y recomiéndanos tus favoritos</label>
+    <label class='title'>Te Recomiendo</label>
   </header>
   <main>
-    <input type='text' id="email" class='email'>Ingrese su email</input>
-    <input type='text' id="password" class='password'>Contraseña</input>
-    <button class='login-btn' id="loginBtn">Entrar</button>
-    <hr>
-    <button class='login-google-btn' id="loginGoogleBtn">Ingresa con Google</button>
-    <label class='registro'> Aun no tienes cuenta? <a href='' id="linkRegister" class='link-register'>Regístrate aquí</a></label>
-  </main>
+    <label class='description'>Crea tu cuenta</label>
+    <div id="clearRegister" class="input-register">
+      <input type='text' id="name" class='name' placeholder='Nombre'/>
+      <input type='text' id="lastName" class='last-name' placeholder='Apellido' autocomplete="off"/>
+      <input type='text' id="userEmail" class='user-email' placeholder='Email' autocomplete="off"/>
+      <input type='password' id="password" class='password' placeholder='Contraseña'/>
+      <input type='password' id="confirm" class='confirm' placeholder='Confirmación'/>
+    </div>
+    <label id="statusLogin" class="status-login"></label>
+    <button class='register-btn' id="registerBtn">Crea tu cuenta</button>
+ </main>
 `;
