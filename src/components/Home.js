@@ -112,7 +112,7 @@ function Home(navigateTo) {
         const clone = containerPost.cloneNode(true);
 
         // Busca si usuario loggeado le dio like al post
-        const findLike = likes.find((like) => like === emailUserLogged);
+        const findLike = likes.find((like) => like === emailUserLogged); git;
         // Agrega icono de like a los post que el usuario le ha dado like
         if (findLike) {
           const likeIcon = clone.querySelector(`#likeCount-${post.id}`);
