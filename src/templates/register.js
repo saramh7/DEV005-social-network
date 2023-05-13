@@ -17,5 +17,6 @@ export const registerTemplate = `
     </div>
     <label id="statusLogin" class="status-login"></label>
     <button class='register-btn' id="registerBtn">Crea tu cuenta</button>
+   
  </main>
 `;
