@@ -9,7 +9,6 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  getAuth,
 } from 'firebase/auth';
 import { auth } from './index.js';
 
