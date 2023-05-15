@@ -42,6 +42,11 @@ function Register(navigateTo) {
     }
   });
 
+  const backToHome = registerContainer.querySelector('#backBtn');
+  backToHome.addEventListener('click', () => {
+    navigateTo('/');
+  });
+
   return registerContainer;
 }
 export default Register;
