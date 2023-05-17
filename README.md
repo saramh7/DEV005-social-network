@@ -1,25 +1,20 @@
 # Creando una Red Social
 ## 1. Introducción 
 
-En una era digital, donde la eficiencia del tiempo es cada vez mas requerida, hay personas que quieren ser productivas en todo lo que hacen, 
-incluso cuando se quieren dar un tiempo para el ocio y la diversión. 
+En una era digital, donde la eficiencia del tiempo es cada vez mas requerida, hay personas que quieren ser productivas en todo lo que hacen, incluso cuando se quieren dar un tiempo para el ocio y la diversión. 
 
 Para aquellos que disfrutan de la lectura de un libro, saben que es un pasatiempo que toma tiempo, 
 por lo tanto muchas veces nos decepcionamos al comenzar un libro y este no era lo que esperábamos, considerando que perdimos el tiempo
 y que nuestras expectativas sobre este no se cumplieron.
 
-En nuestra investigación nos encontramos que no hay muchos espacios  para que las personas puedan comentar y compartir
-sus experiencia en relación a lo que están leyendo.  De ahi nace la necesidad de una red social que permita a los amantes de la lectura y los libros tener un lugar seguro para poder expresarse.
- 
+En nuestra investigación nos encontramos con pocos lugares donde las personas puedan compartir y expresar todo lo relacionado con el mundo De ahi nace la necesidad de una red social que permita a los amantes de la lectura y los libros tener un lugar seguro para poder expresarse.
 
 ## 2. Resumen del proyecto, creando una Red Social 
 
-  En nuestra investigación nos encontramos que no hay muchos espacios  para que las personas puedan comentar y compartir
-  sus experiencia en relación a lo que están leyendo. Para  el lector entusiasmado, no siempre cuenta en su circulo de 
-  familia y/o amigos personas que entiendan su pasión y tengan el interés de conocer los detalles de su lectura, 
+  Para  el lector entusiasmado, no siempre cuenta en su circulo de familia y/o amigos personas que 
+  entiendan su pasión y tengan el interés de conocer los detalles de su lectura, 
   en esta red social tiene un lugar donde puede expresarse libremente, una comunidad que comparte 
-  sus mismo intereses. De ahi nace la necesidad de una red social que permita a los amantes de la lectura 
-  y los libros tener un lugar seguro para poder expresarse.
+  sus mismo intereses. 
  
 * Quiénes son los principales usuarios de producto? 
   Este proyecto esta enfocado en las personas amante de las lecturas y las que se quieren iniciar en el mundo de los libros.
