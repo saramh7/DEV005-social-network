@@ -128,98 +128,97 @@ function Home(navigateTo) {
   const fragment = document.createDocumentFragment();
   const postSection = homeContainer.querySelector('#wall');
   postSection.className = 'wall';
-  window.addEventListener('DOMContentLoaded', () => {
-    getPost((postData) => {
-      postSection.textContent = '';
 
-      postData.forEach((post) => {
-        const {
-          comment, name, likes, userId, createAt, modified, userPhoto,
-        } = post.data();
+  getPost((postData) => {
+    postSection.textContent = '';
 
-        containerPost.querySelector('.post-user-name').innerHTML = String(name).toUpperCase() || 'Anónimo';
-        containerPost.querySelector('.post-comment').innerHTML = comment;
-        containerPost.querySelector('.post-date').innerHTML = calculateDifference(createAt, modified);
-        containerPost
-          .querySelector('.post-image')
-          .setAttribute('src', userPhoto || '/images/profile-default.jpeg');
+    postData.forEach((post) => {
+      const {
+        comment, name, likes, userId, createAt, modified, userPhoto,
+      } = post.data();
 
-        containerPost.querySelector('.like-count').innerHTML = `${likes.length || '0'}`;
-        containerPost.querySelector('.like-count').setAttribute('id', `like-${post.id}`);
-        containerPost.querySelector('.heart').setAttribute('id', `likeCount-${post.id}`);
-        containerPost.querySelector('.edit').setAttribute('id', `edit-${post.id}`);
-        containerPost.querySelector('.trash').setAttribute('id', `trash-${post.id}`);
+      containerPost.querySelector('.post-user-name').innerHTML = String(name).toUpperCase() || 'Anónimo';
+      containerPost.querySelector('.post-comment').innerHTML = comment;
+      containerPost.querySelector('.post-date').innerHTML = calculateDifference(createAt, modified);
+      containerPost
+        .querySelector('.post-image')
+        .setAttribute('src', userPhoto || '/images/profile-default.jpeg');
 
-        const clone = containerPost.cloneNode(true);
+      containerPost.querySelector('.like-count').innerHTML = `${likes.length || ''}`;
+      containerPost.querySelector('.like-count').setAttribute('id', `like-${post.id}`);
+      containerPost.querySelector('.heart').setAttribute('id', `likeCount-${post.id}`);
+      containerPost.querySelector('.edit').setAttribute('id', `edit-${post.id}`);
+      containerPost.querySelector('.trash').setAttribute('id', `trash-${post.id}`);
 
-        // Busca si usuario loggeado le dio like al post
-        const findLike = likes.find((like) => like === emailUserLogged);
-        // Agrega icono de like a los post que el usuario le ha dado like
-        if (findLike) {
-          const likeIcon = clone.querySelector(`#likeCount-${post.id}`);
-          const isLike = clone.querySelector('.heart').getAttribute('rel');
+      const clone = containerPost.cloneNode(true);
 
-          if (isLike === 'like') {
-            likeIcon.classList.add('heartAnimation');
-            likeIcon.setAttribute('rel', 'unlike');
-          }
+      // Busca si usuario loggeado le dio like al post
+      const findLike = likes.find((like) => like === emailUserLogged);
+      // Agrega icono de like a los post que el usuario le ha dado like
+      if (findLike) {
+        const likeIcon = clone.querySelector(`#likeCount-${post.id}`);
+        const isLike = clone.querySelector('.heart').getAttribute('rel');
+
+        if (isLike === 'like') {
+          likeIcon.classList.add('heartAnimation');
+          likeIcon.setAttribute('rel', 'unlike');
+        }
+      }
+
+      // Agrega evento para dar like a un post
+      const likeBtn = clone.querySelector('.heart');
+      likeBtn.addEventListener('click', () => {
+        const likeIcon = homeContainer.querySelector(`#likeCount-${post.id}`);
+        const isLike = likeBtn.getAttribute('rel');
+
+        if (isLike === 'like') {
+          likeIcon.classList.add('heartAnimation');
+          likeIcon.setAttribute('rel', 'unlike');
+          likePost(post.id, emailUserLogged);
         }
 
-        // Agrega evento para dar like a un post
-        const likeBtn = clone.querySelector('.heart');
-        likeBtn.addEventListener('click', () => {
-          const likeIcon = homeContainer.querySelector(`#likeCount-${post.id}`);
-          const isLike = likeBtn.getAttribute('rel');
-
-          if (isLike === 'like') {
-            likeIcon.classList.add('heartAnimation');
-            likeIcon.setAttribute('rel', 'unlike');
-            likePost(post.id, emailUserLogged);
-          }
-
-          if (isLike === 'unlike') {
-            likeIcon.classList.add('heartAnimation');
-            likeIcon.setAttribute('rel', 'like');
-            unlikePost(post.id, emailUserLogged);
-          }
-        });
-
-        // Verifica si usuario logeado es el mismo que creo este post
-        // y activa opciones de eliminar y editar
-        if (uidUserLogged === userId) {
-          // Agrega evento para dar eliminar un post
-          const btnTrash = clone.querySelector('.trash');
-          btnTrash.addEventListener('click', () => {
-            deletePost(post.id);
-          });
-
-          // // AQUI VA EL EVENTO PARA EL ICONO MODIFICAR
-          const btnEdit = clone.querySelector('.edit');
-          btnEdit.addEventListener('click', () => {
-            const textAreaComment = homeContainer.querySelector('#comment');
-            const current = homeContainer.querySelector('#current');
-            current.textContent = comment.length;
-
-            modifyBtn.classList.remove('hidden');
-            publishBtn.classList.add('hidden');
-
-            textAreaComment.value = comment;
-            idPostEdited = post.id;
-            window.scroll({
-              top: 0,
-              left: 0,
-              behavior: 'smooth',
-            });
-            console.log('editPost', post.id);
-          });
-        } else {
-          clone.querySelector('.post-options').textContent = '';
+        if (isLike === 'unlike') {
+          likeIcon.classList.add('heartAnimation');
+          likeIcon.setAttribute('rel', 'like');
+          unlikePost(post.id, emailUserLogged);
         }
-        fragment.appendChild(clone);
       });
 
-      postSection.appendChild(fragment);
+      // Verifica si usuario logeado es el mismo que creo este post
+      // y activa opciones de eliminar y editar
+      if (uidUserLogged === userId) {
+        // Agrega evento para dar eliminar un post
+        const btnTrash = clone.querySelector('.trash');
+        btnTrash.addEventListener('click', () => {
+          deletePost(post.id);
+        });
+
+        // // AQUI VA EL EVENTO PARA EL ICONO MODIFICAR
+        const btnEdit = clone.querySelector('.edit');
+        btnEdit.addEventListener('click', () => {
+          const textAreaComment = homeContainer.querySelector('#comment');
+          const current = homeContainer.querySelector('#current');
+          current.textContent = comment.length;
+
+          modifyBtn.classList.remove('hidden');
+          publishBtn.classList.add('hidden');
+
+          textAreaComment.value = comment;
+          idPostEdited = post.id;
+          window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+          });
+          console.log('editPost', post.id);
+        });
+      } else {
+        clone.querySelector('.post-options').textContent = '';
+      }
+      fragment.appendChild(clone);
     });
+
+    postSection.appendChild(fragment);
   });
 
   return homeContainer;

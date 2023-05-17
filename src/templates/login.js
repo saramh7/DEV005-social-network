@@ -1,9 +1,11 @@
 /**
  * Template usado en el components/Login.js
  */
+import { logo } from '../components/Images.js';
+
 export const loginTemplate = `
   <header>
-    <img src='../images/logo.png' class='logo-inicio'>
+    <img src=${logo} class='logo-inicio'>
     <div class='logo'>
       <label class='title'>Te Recomiendo</label>
       <label class='title-description'>Somos amantes de los libros.<br>Ven y recomiéndanos tus favoritos!</label>
