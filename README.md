@@ -9,7 +9,7 @@ por lo tanto muchas veces nos decepcionamos al comenzar un libro y este no era l
 y que nuestras expectativas sobre este no se cumplieron.
 
 En nuestra investigación nos encontramos que no hay muchos espacios  para que las personas puedan comentar y compartir
-sus experiencia en relación a lo que están leyendo.  De ahi nace la necesidad de una red social que permita a los amantes de lalectura y los libros tener un lugar seguro para poder expresarse.
+sus experiencia en relación a lo que están leyendo.  De ahi nace la necesidad de una red social que permita a los amantes de la lectura y los libros tener un lugar seguro para poder expresarse.
  
 
 ## 2. Resumen del proyecto, creando una Red Social 
@@ -30,8 +30,8 @@ sus experiencia en relación a lo que están leyendo.  De ahi nace la necesidad 
   Para aquellos indecisos que están buscando que leer podrán acceder a las  recomendaciones de los otros usuarios. 
 
   Nuestro trabajo incluye, bocetos  de prototipos de baja y alta fidelidad. 
-  Los prototipos de alta fidelidad [se trabajaron en Figma] (https://www.figma.com/file/kDsWXV7PUMnDLUs0yWgdpG/Social-Network?type=design&node-id=20-194&t=gwT3ZzeE6qxVShFb-0) e incluyen las interacciones de la pagina.
-  Las Historias de usuarios se trabajaron en [Trello] (https://trello.com/b/dr5MfLGV/social-network-sara). 
+  Los prototipos de alta fidelidad [se trabajaron en Figma](https://www.figma.com/file/kDsWXV7PUMnDLUs0yWgdpG/Social-Network?type=design&node-id=20-194&t=gwT3ZzeE6qxVShFb-0) e incluyen las interacciones de la pagina.
+  Las Historias de usuarios se trabajaron en [Trello](https://trello.com/b/dr5MfLGV/social-network-sara). 
   Si necesitas acceso a ver nuestro Trello, por favor contáctanos.
 
 
@@ -82,14 +82,14 @@ Para acceder al proyecto desplegado [Haga clik aqui](https://social-network-te-r
 - [x] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
 ### Centrado en el usuario
 
-- [ x] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
+- [x] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
 ### Diseño de producto
 
 - [x] **Crear prototipos de alta fidelidad que incluyan interacciones**
 - [x] **Seguir los principios básicos de diseño visual**
 ### Investigación
 
-- [ x] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
+- [x] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
 ### Firebase
 
 - [x] **Firebase Auth**
